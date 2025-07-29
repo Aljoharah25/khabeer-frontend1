@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل دخول نظام الموافقات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <span class="nav-title">تسجيل الدخول</span>
+  </nav>
+
+  <div class="login-box">
+    <img src="najez.png" alt="شعار ناجز" class="logo">
+    <h1 class="tittle">نظام الموافقات</h1>
+    <p class="subtitle">منصة إدارة الموافقات الإلكترونية</p>
+
+    <form>
+      <label for="username">اسم المستخدم</label>
+      <input id="username" type="text" placeholder="👤 ادخل اسم المستخدم" required>
+
+      <label for="password">كلمة المرور</label>
+      <input id="password" type="password" placeholder="🔒 ادخل كلمة المرور" required>
+
+      <a href="#" class="forgot-password">هل نسيت كلمة المرور؟</a>
+
+      <button class="button" type="button" onclick="validateLogin()">تسجيل الدخول</button>
+    </form>
+  </div>
+
+  <script>
+    const users = [
+      { 
+        username: "hr", 
+        password: "123", 
+        role: "HR_SPECIALIST", 
+        name: "  محمد الحوشان",
+        roleName: "أخصائي الموارد البشرية",
+        quickActions: [
+          { icon: "💰", title: "زيادة راتب", desc: "طلب لزيادة الراتب للموظف حسب اللوائح" },
+          { icon: "✈️", title: "رحلة عمل", desc: "طلب تصريح لرحلة عمل رسمية" },
+          { icon: "👤", title: "طلب تعيين", desc: "تقديم طلب تعيين موظف جديد" },
+          { icon: "⏰", title: "عمل إضافي", desc: "طلب عمل إضافي" }
+        ]
+      },
+      { 
+        username: "manager", 
+        password: "123", 
+        role: "HR_MANAGER", 
+        name: " عبدالله ال طالب",
+        roleName: "مدير الموارد البشرية",
+        quickActions: [
+          { icon: "📝", title: "مراجعة الطلبات", desc: "مراجعة طلبات الموظفين" },
+          { icon: "📊", title: "تقارير الموظفين", desc: "عرض تقارير أداء الموظفين" },
+          { icon: "🏛️", title: "إدارة الأقسام", desc: "تعديل هيكل الأقسام" }
+        ]
+      },
+      { 
+        username: "member", 
+        password: "123", 
+        role: "COMMITTEE_MEMBER", 
+        name: "خالد أحمد",
+        roleName: "عضو لجنة",
+        quickActions: [
+          { icon: "✅", title: "التصويت على الطلبات", desc: "المشاركة في قرارات الموافقات" },
+          { icon: "📑", title: "متابعة المحاضر", desc: "مراجعة محاضر الاجتماعات" }
+        ]
+      },
+      { 
+        username: "studient", 
+        password: "123", 
+        role: "AUTHORITY_OWNER", 
+        name: "نورة سعيد",
+        roleName: "صاحب الصلاحية",
+        quickActions: [
+          { icon: "🖋️", title: "اعتماد الطلبات", desc: "اعتماد أو رفض الطلبات النهائية" },
+          { icon: "🔍", title: "مراجعة السجلات", desc: "مراجعة سجلات الموافقات السابقة" }
+        ]
+      },
+      { 
+        username: "system", 
+        password: "123", 
+        role: "SYSTEM_ADMIN", 
+        name: "علي المدير",
+        roleName: "مدير النظام",
+        quickActions: [
+          { icon: "👥", title: "إدارة المستخدمين", desc: "إضافة/تعديل/حذف المستخدمين" },
+          { icon: "⚙️", title: "إعدادات النظام", desc: "تعديل إعدادات النظام الأساسية" },
+          { icon: "🏢", title: "شعار المؤسسة", desc: "تغيير شعار المؤسسة" },
+          { icon: "📊", title: "التقارير", desc: "عرض تقارير النظام" }
+        ]
+      }
+    ];
+
+   function validateLogin() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+
+  const user = users.find(u => u.username === username && u.password === password);
+
+  if (user) {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    window.location.href = "hr_specialist.html";
+  } else {
+    alert("اسم المستخدم أو كلمة المرور غير صحيحة");
+  }
+}
+  </script>
+</body>
+</html>

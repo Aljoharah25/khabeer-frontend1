@@ -1,0 +1,170 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F8FFF9;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 100px 12px 0;
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-title {
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(to right, #27732C, #45A348);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.user-badge {
+  background-color: white;
+  border-radius: 50px;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  width: 320px;
+  gap: 15px;
+   margin-left: 120px; /* إضافة هذه الخاصية */
+  /* margin-right: 10px; تعديل هذه القيمة حسب احتياجك */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #555555;
+  margin-top: 4px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: #4AAC4F;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 15px 35px;
+  cursor: pointer;
+  /* transition: background 0.3s ease; */
+  /* flex-shrink: 0; */
+  box-shadow: 0 4px 10px rgba(29, 95, 33, 0.6);
+}
+
+.logout-btn:hover {
+ background: linear-gradient(to right, #1D5F21, #4AAC4F);
+}
+
+.tittle {
+  font-size: 26px;
+  color: #195E20;
+  text-align: right;
+  width: 90%;
+  margin: 40px 100px 10px 0;
+  align-self: flex-end;
+}
+
+.section-line {
+  width: 90%;
+  border: none;
+  height: 1px;
+  background-color: #195E20;
+  margin-bottom: 40px;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 أعمدة */
+  gap: 20px;
+  width: 95%;
+  margin: 0 auto 40px auto;
+}
+
+.action-box {
+  background-color: #ffffff;
+  border: 2px solid #EEEEEE;
+  border-radius: 20px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+/* بقية التصميمات تبقى كما هي */
+
+.action-box:hover {
+  background-image: linear-gradient(to right, #1D5F21, #4AAC4F);
+  border-color: #1D5F21;
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #1D5F21;
+  margin-left: 15px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.action-box:hover .icon-box {
+  background-color: #58A659;
+  color: white;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.action-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1D5F21;
+  transition: color 0.3s ease;
+}
+
+.action-desc {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+  transition: color 0.3s ease;
+}
+
+.action-box:hover .action-text,
+.action-box:hover .action-desc {
+  color: white;
+}

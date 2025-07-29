@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>نظام الموافقات</title>
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+  <nav class="nav">
+    <span class="nav-title">نظام الموافقات</span>
+    <div class="user-badge" id="userBadge"></div>
+  </nav>
+
+  <div id="mainContent"></div>
+
+  <script>
+    // بيانات جميع الأدوار
+    // const rolesConfig = {
+    //   HR_SPECIALIST: {
+    //     title: "أخصائي الموارد البشرية",
+    //     quickActions: [
+    //       { icon: "💰", title: "زيادة راتب", desc: "طلب لزيادة الراتب للموظف حسب اللوائح" },
+    //       { icon: "✈️", title: "رحلة عمل", desc: "طلب تصريح لرحلة عمل رسمية" }
+    //     ]
+    //   },
+    //   SYSTEM_ADMIN: {
+    //     title: "مدير النظام",
+    //     quickActions: [
+    //       { icon: "👥", title: "إدارة المستخدمين", desc: "إضافة/تعديل/حذف المستخدمين" },
+    //       { icon: "⚙️", title: "إعدادات النظام", desc: "تعديل إعدادات النظام الأساسية" }
+    //     ]
+    //   },
+    //   // ... (أضف بقية الأدوار هنا بنفس الطريقة)
+    // };
+
+    window.onload = function() {
+      const user = JSON.parse(localStorage.getItem('currentUser'));
+      
+      if (!user) {
+        window.location.href = "login.html";
+        return;
+      }
+
+      // عرض معلومات المستخدم
+      document.getElementById("userBadge").innerHTML = `
+        <div class="user-info">
+          <div class="user-name">${user.name}</div>
+          <div class="user-role">${user.roleName}</div>
+        </div>
+        <button class="logout-btn" onclick="logout()">تسجيل الخروج</button>
+      `;
+
+      // عرض الإجراءات حسب الدور
+      let actionsHTML = '';
+  user.quickActions.forEach(action => {
+    actionsHTML += `
+      <div class="action-box">
+        <div class="icon-box">${action.icon}</div>
+        <div class="text-content">
+          <span class="action-text">${action.title}</span>
+          <p class="action-desc">${action.desc}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  // بناء المحتوى مع الحفاظ على التصميم الأصلي
+  document.getElementById("mainContent").innerHTML = `
+    <h2 class="tittle">الإجراءات السريعة</h2>
+    <hr class="section-line">
+    <div class="actions-grid">
+      ${actionsHTML}
+    </div>
+    <h2 class="tittle">طلباتي المرسلة</h2>
+    <hr class="section-line">
+    <div class="requests-container">
+      <!-- سيتم إضافتها لاحقًا -->
+    </div>
+  `;
+};
+
+    function logout() {
+      localStorage.removeItem('currentUser');
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
