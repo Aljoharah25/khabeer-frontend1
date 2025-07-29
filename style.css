@@ -1,0 +1,125 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F8FFF9;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  background-color: #ffffff;
+  padding: 20px 0;
+  width: 100%;
+  padding-right: 100px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-title {
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(to right, #27732C, #45A348);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-box {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 120%;
+  max-width: 400px;
+  text-align: right;
+  margin-top: 80px;
+}
+
+label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #444;
+  font-weight: bold;
+  display: block;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.button {
+  margin-top: 50px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bolder;
+  width: 100%;
+}
+
+.button:hover {
+
+  /* background: linear-gradient(to right, #1D5F21, #1D5F21); */
+  background-color: #1D5F21;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 15px;
+  text-align: right;
+  color: #0052cc;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  color: #003d99;
+  text-decoration: underline;
+}
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: 'Tajawal', sans-serif;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus {
+  border-color: #4AAC4F;
+  outline: none;
+  box-shadow: 0 0 5px rgba(74, 172, 79, 0.4);
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
